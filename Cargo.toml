@@ -1,0 +1,24 @@
+workspace = { members = [
+    "attendance_service",
+    "auth_service",
+    "common",
+    "employee_management_service",
+    "notification_service",
+    "reporting_service",
+] }
+[package]
+name = "workzen"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+jsonwebtoken = "7"
+bcrypt = "0.8"
+warp = "0.3"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+auth_service = { path = "./auth_service" }
+employee_management_service = { path = "./employee_management_service" }
+common = { path = "./common" }
